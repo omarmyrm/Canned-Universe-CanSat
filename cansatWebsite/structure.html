@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Calculadora Paracaidas cansat</title>
+	<link rel = "stylesheet" href = "estilos.css">
+	<link rel="shortcut icon" type="image/x-icon"	href="CAnSAt.ico">
+</head>
+<body>
+	<header>
+
+            <img class = "imagenInicio"src="CAnSAt.png" height="100" width="100">
+            <h1>Superficie requerida para el paracaídas del Cansat</h1>
+	</header>
+	<section class="wrapper">
+		
+		
+		<ul class="ul1">		
+				<li class = "Menu">Calculadora</li>
+				
+		</ul>
+
+		<section class="main">
+			<article>
+				<h2>Calculadora Cansat</h2>
+			</article>
+			<form class="formaSelector" name="formulario" method="GET">
+				<label for = "masaCansat">	Escribe la masa de tu cansat (g):</label>
+					<input type="number" name="masaCansat" placeholder="masa" size="10" id="masaCansat" maxlength="4" required>
+				
+				<br>
+				<br>
+					<p >Selecciona la forma deseada para el paracaídas:
+						<select name="" id="Forma" required>
+							
+							<option value = "Hexagonal">Hexagonal</option>
+							<option value = "SemiEsferico">Semiesférico</option>
+							<option value="Cruzado">Cruzado</option>
+							<option value="Parapente">Parapente</option>
+						</select>
+						
+		 			</p>
+		 			<label for="velocidadDescenso">
+		 				Escribe la velocidad aproximada que te gustaría tener en el descenso:
+		 				<br>
+		 				Tiene que estar entre 8m/s y 11m/s,<br> ten en cuenta que una velocidad más lenta te permitirá recibir más datos:
+		 					<input  name="velocidad" type = "number" placeholder="velocidad" size="10" id="velocidad" maxlength="5" required>
+							<br> 
+							 <input  class="sendButton" type="submit" value="Enviar">
+		 			</label>
+
+			</form>
+			<p class="resultado">La cantidad de tela que necesitas es de aproximadamente: 
+				<div id = "resultado" class="cajetinResultado">
+					Introduce las variables
+				</div>
+
+			</p>
+		</section>
+		<ul class="ul2">
+			<li class="MenuDoc">Documentación</li>
+		</ul>
+		<section class="docs">
+
+			<a href="http://esero.es/wp-content/uploads/2019/10/T10_Parachute_Design.pdf" target="blank">
+			<img src = "parachuteCover.png" height="180" width="120">
+			</a>
+		</section>
+	
+	</section>
+
+    <footer  class="logos">
+		<a class= "eseroLogo" href="http://esero.es/cansat/" target="blank">
+			
+		<img src="logoCansat.jpg" height="40" width="40">
+		Página web del organizador
+ 
+	</a> 
+	<a class= "twitterLogo" href="https://twitter.com/AlbaceteCanned" target="blank">
+		
+		<img src="twitterLogo.jfif" height="40" width="40">
+		Twitter del Equipo
+	  
+	</a>
+	<a class= "instagramLogo" href="https://www.instagram.com/albacetecanned/" target="blank">
+		
+		<img src="instagramLogo.jfif" height="40" width="40">  
+		Instagram del Equipo
+	</a>
+</footer>
+<script src="calculator.js"></script>
+</body>
+</html>

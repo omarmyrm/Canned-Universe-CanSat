@@ -1,0 +1,130 @@
+ header{
+    position: relative;
+    height: 25%;
+}
+body{
+    padding-top: 0px;
+    text-align: top;
+    background: lightblue;
+    color: black;
+    font: 1em consolas;
+    font-size: medium;
+}
+h1{
+    position: absolute;
+    top: 10%;
+    right: 20;
+    padding-top: 0px;
+    margin-top: 0px;
+    background-color: lightblue;
+    color: black;
+    display: inline;
+}
+h2{
+    color: black;
+    font: consolas;
+}
+footer{
+    position: absolute;
+    width: 100%;
+    top: 90%;
+    margin-top: 250px;
+    margin-bottom: 10px;
+}
+footer a{
+    color: white;
+}
+.resultado{
+    color:black;
+font-weight: 600;
+}
+.cajetinResultado{
+    margin: 10px;
+    height: 100%;
+    width:25%;
+    background-color: white;
+    color: black;
+    border-radius: 15%;
+    text-align: center;
+}
+.main{
+    background-color: orange;
+    font: 1em consolas;
+    width: 75%;
+    height: 500%;
+    padding-left: 1%;
+    border: solid black;
+}
+.ul1{
+    background-color: black;
+    top: 15%;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    width: 75%;
+   
+}
+.ul2{
+    background-color: black;
+    color: white;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 75%;
+   
+}
+
+.imagenInicio{
+    display: inline;
+    margin: 10px;
+}
+
+/* parte de los logos*/
+.logos{  
+    position: relative;
+    width: 100%;
+    height: 5%;
+    bottom: 1%;
+    padding: 2%;
+
+    background-color:black;
+}
+
+.eseroLogo{
+position: relative;
+left: 10%;
+height: 40px;
+width: 40px;
+}
+.twitterLogo{
+    position: relative;
+    left: 15%;
+    height: 40px;
+    width: 40px;
+}
+.instagramLogo{
+    position: relative;
+    left: 20%;
+    height: 40px;
+    width: 40px;
+}
+.docs{
+    background-color: white;
+    width: 120px;
+}
+.sendButton{
+
+    position: relative;
+    font-size: 200%;
+    font: verdana;
+    font-style: oblique;
+    font-weight: bold;
+    margin: 10px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    height: 100%;
+    width: 20% ;
+    border-radius: 25%;
+
+}

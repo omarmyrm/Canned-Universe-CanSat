@@ -1,0 +1,28 @@
+
+//Placa ESP32
+//Pinout:
+// ESP32  
+3V3 (No hay 5V)
+GND
+
+// I2C
+
+// SDA      GPIO 21
+// SCL      GPIO 22
+
+// SD CARD
+
+// SPI_MOSI GPIO 23
+// SPI_MISO GPIO 19
+// SPI_CLK  GPIO 18
+// SPI_CSO  GPIO 05
+
+//RADIO
+
+//RX	RX0
+//TX	TX0
+
+//GPS
+
+//TX  RX2
+//RX  TX2

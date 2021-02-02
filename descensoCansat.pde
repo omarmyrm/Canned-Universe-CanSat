@@ -26,7 +26,7 @@ void setup() {
 
   size(400, 800);
   println(Serial.list());//Para localizar el numero de puerto
-                         // en mi caso el 32.
+                         // si solo tienes un puerto conectado creo que es el 0 , en mi caso tenía dos puertos y entonces es el índice 1
   myPort = new Serial(this, Serial.list()[1], 9600);
  
 }

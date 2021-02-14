@@ -13,6 +13,7 @@ DATE:25-01-2020
 
 long packetsSend = 1;
 unsigned long a;// to store millis() 
+bool SDcardWorking = false;
 
 
 void setup(){
@@ -20,33 +21,35 @@ void setup(){
       initGPS();
       initPressTemp();
       initOLED();
-    
-      initSD();
+      SDcardWorking = initSD();
+
+      while(packetsSend<100){
+         a = millis();
+ 
+          if( packetsSend > a /1000 )// packetsSend empieza siendo 1
+          {
+          }else{
+              String dataPressTemp = getDataPressTemp();
+              float tempOLED = tempForOLED();
+              float pressOLED = pressForOLED();
+              int metersHigh = gps.altitude.meters();
+              Serial.print(dataPressTemp);
+              displayGPS();
+              logToSD(dataPressTemp,metersHigh,SDcardWorking);
+              Serial.println("$");
+        
+              
+              displayTemperatura(tempOLED);
+              displayPressure(pressOLED);
+              displayAltitude(metersHigh);
+              delay(100);
+              ++packetsSend;
+             
+            } 
+           
+      }
+       myFile.close();
 }
 
 void loop() {
-  
-  a = millis();
- 
-  if( packetsSend > a /1000 )// packetsSend empieza siendo 1
-  {
-  }else{
-      String dataPressTemp = getDataPressTemp();
-      float tempOLED = tempForOLED();
-      float pressOLED = pressForOLED();
-      int metersHigh = gps.altitude.meters();
-      Serial.print(dataPressTemp);
-      displayGPS();
-      logToSD(dataPressTemp,metersHigh);
-      Serial.println("$");
-
-      
-      displayTemperatura(tempOLED);
-      displayPressure(pressOLED);
-      displayAltitude(metersHigh);
-      delay(100);
-      ++packetsSend;
-     
-    } 
-    myFile.close();
   }

@@ -1,26 +1,44 @@
 #include <SPI.h>
 #include "SD.h"
-#define fileName ".TXT"// establecer el nombre del archivo a abrir
+#define fileName "/log.TXT"
+
 File myFile;
  
 bool cardFailed = false;
 
  
-void initSD(){
+bool initSD(){
     Serial.begin(9600);
-    SD.begin(5);
-    myFile = SD.open(fileName, FILE_WRITE);
-    myFile.println("inicio escritura de datos\n\n\n");
-    myFile.println("Temperatura\tPresion\n");
+    
+   
+    if(SD.begin(5))
+    {  
+    myFile = SD.open("/log.txt", FILE_WRITE);
+    if(myFile)
+      {
+        myFile.println("Temperatura\tPresion\n");
+        return true;
+    }else
+    {
+      return false;
+    } 
+    }else
+    {
+       return false;
+    }
 }
-void logToSD (String a, int x)
-{
+void logToSD (String a, int x,bool f)
+{   
+ 
+ 
     String data1 = a;
     int data2 = x;
-         if(myFile)
-         {    
+    bool b = f;
+         if(!b)
+         {
+         }else{ 
               myFile.print(data1);
               myFile.print(data2);
-              myFile.println("$");  
+              myFile.println("$");      
          }
 }

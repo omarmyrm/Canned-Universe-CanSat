@@ -1,7 +1,8 @@
 
 //Placa ESP32
 //Pinout:
-// ESP32  
+// ESP32 
+
 3V3 (No hay 5V)
 GND
 
@@ -19,10 +20,14 @@ GND
 
 //RADIO
 
-//RX	RX0
-//TX	TX0
+//RX	TX0
+//TX	RX0
 
 //GPS
 
 //TX  RX2
 //RX  TX2
+
+//DS18b20
+
+//DATA D4

@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.5" unitdist="mm" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -1822,7 +1822,6 @@ design rules under a new name.</description>
 <contactref element="PLACA" pad="3V3"/>
 <contactref element="CONECTOR_PLACAS" pad="4"/>
 <contactref element="GPS" pad="VCC"/>
-<contactref element="GPS" pad="GND"/>
 <contactref element="BUZZ" pad="2"/>
 <wire x1="40.6908" y1="50.1396" x2="47.8536" y2="50.1396" width="0.1524" layer="1"/>
 <wire x1="31.242" y1="59.5884" x2="40.6908" y2="50.1396" width="0.1524" layer="1"/>
@@ -1830,20 +1829,19 @@ design rules under a new name.</description>
 <wire x1="47.8536" y1="50.1396" x2="48" y2="50" width="0.1524" layer="1"/>
 <wire x1="31.242" y1="60.96" x2="31.23" y2="61" width="0.1524" layer="1"/>
 <wire x1="28.8036" y1="20.4216" x2="28.8036" y2="7.3152" width="0.1524" layer="1"/>
-<wire x1="25.4508" y1="23.7744" x2="28.8036" y2="20.4216" width="0.1524" layer="1"/>
 <wire x1="28.8036" y1="7.3152" x2="28.69" y2="7.27" width="0.1524" layer="1"/>
-<wire x1="25.4508" y1="23.7744" x2="25.45" y2="23.87" width="0.1524" layer="1"/>
 <wire x1="32.1564" y1="23.7744" x2="32.9184" y2="23.7744" width="0.1524" layer="1"/>
 <wire x1="28.8036" y1="20.4216" x2="32.1564" y2="23.7744" width="0.1524" layer="1"/>
 <wire x1="32.9184" y1="23.7744" x2="33.07" y2="23.87" width="0.1524" layer="1"/>
-<wire x1="17.3736" y1="31.8516" x2="17.3736" y2="42.2148" width="0.1524" layer="1"/>
-<wire x1="25.2984" y1="23.9268" x2="17.3736" y2="31.8516" width="0.1524" layer="1"/>
-<wire x1="17.3736" y1="42.2148" x2="17.34" y2="42.28" width="0.1524" layer="1"/>
-<wire x1="25.2984" y1="23.9268" x2="25.45" y2="23.87" width="0.1524" layer="1"/>
 <wire x1="31.0896" y1="56.0832" x2="31.0896" y2="60.96" width="0.1524" layer="16"/>
 <wire x1="17.3736" y1="42.3672" x2="31.0896" y2="56.0832" width="0.1524" layer="16"/>
 <wire x1="31.0896" y1="60.96" x2="31.23" y2="61" width="0.1524" layer="16"/>
 <wire x1="17.3736" y1="42.3672" x2="17.34" y2="42.28" width="0.1524" layer="16"/>
+<wire x1="27.1272" y1="20.4216" x2="28.8036" y2="20.4216" width="0.1524" layer="1"/>
+<wire x1="22.098" y1="25.4508" x2="27.1272" y2="20.4216" width="0.1524" layer="1"/>
+<wire x1="22.098" y1="37.4904" x2="22.098" y2="25.4508" width="0.1524" layer="1"/>
+<wire x1="17.3736" y1="42.2148" x2="22.098" y2="37.4904" width="0.1524" layer="1"/>
+<wire x1="17.3736" y1="42.2148" x2="17.34" y2="42.28" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$4">
 <contactref element="PLACA" pad="D22"/>
@@ -1947,6 +1945,11 @@ design rules under a new name.</description>
 <wire x1="31.3944" y1="48.3108" x2="49.6824" y2="48.3108" width="0.1524" layer="1"/>
 <wire x1="28.6512" y1="51.054" x2="31.3944" y2="48.3108" width="0.1524" layer="1"/>
 <wire x1="49.6824" y1="48.3108" x2="49.79605" y2="48.203946875" width="0.1524" layer="1"/>
+<contactref element="GPS" pad="GND"/>
+<wire x1="25.2984" y1="36.8808" x2="25.2984" y2="23.9268" width="0.1524" layer="1"/>
+<wire x1="19.9644" y1="42.2148" x2="25.2984" y2="36.8808" width="0.1524" layer="1"/>
+<wire x1="25.2984" y1="23.9268" x2="25.45" y2="23.87" width="0.1524" layer="1"/>
+<wire x1="19.9644" y1="42.2148" x2="19.88" y2="42.28" width="0.1524" layer="1"/>
 </signal>
 <signal name="N$10">
 <contactref element="CONECTOR_PLACAS" pad="11"/>

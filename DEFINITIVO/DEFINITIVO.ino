@@ -11,22 +11,22 @@ DATE:25-01-2020
 #include "libOLED.h"
 #include "libSDcard.h"
 
-long packetsSend = 1;
-unsigned long a;// to store millis() 
-bool SDcardWorking = false;
+unsigned double packetsSend = 1;// change data type from long to double, to avoid errors in a later division
+unsigned long double a;// to store millis() as a double, to avoid losing information in a later division
+bool SDcardWorking = false;// this is then set to true when the SDcard starts working, we assume it doesn't stop working during the program.
 
 
 void setup(){
       Serial.begin(9600);
-      initGPS();
-      initPressTemp();
-      initOLED();
-      SDcardWorking = initSD();
+      initGPS();// starts the GPS from its .h file
+      initPressTemp();// starts the BMP180 from its .h file
+      initOLED();// starts the display from the .h file
+      SDcardWorking = initSD();// start the SD and check if it's working or not
 
-      while(packetsSend<100){
-         a = millis();
+      while(packetsSend<100){// ONLY SENDS 100 PACKETS, controls the execution of the program. CHANGE THIS to a GOOD condition to stop the program
+         a = millis();// number of ms since the start of the program
  
-          if( packetsSend > a /1000 )// packetsSend empieza siendo 1
+          if( packetsSend > a /1000 )// *trick* for ONLY sending the data once every second
           {
           }else{
               String dataPressTemp = getDataPressTemp();
@@ -42,7 +42,7 @@ void setup(){
               displayTemperatura(tempOLED);
               displayPressure(pressOLED);
               displayAltitude(metersHigh);
-              delay(100);
+              //delay(100);//removed delay, we are using this "smart delay" with the ms thing
               ++packetsSend;
              
             } 

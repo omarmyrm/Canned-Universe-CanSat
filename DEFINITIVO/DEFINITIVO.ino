@@ -42,7 +42,7 @@ void setup(){
               displayTemperatura(tempOLED);
               displayPressure(pressOLED);
               displayAltitude(metersHigh);
-              //delay(100);//removed delay, we are using this "smart delay" with the ms thing
+              //delay(100);// we are using a "smart delay" with the ms thing instead of delay
               ++packetsSend;
              
             } 

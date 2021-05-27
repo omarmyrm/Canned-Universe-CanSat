@@ -29,26 +29,32 @@ void setup(){
           if( packetsSend > a /1000 )// *trick* for ONLY sending the data once every second
           {
           }else{
-              String dataPressTemp = getDataPressTemp();
-              float tempOLED = tempForOLED();
-              float pressOLED = pressForOLED();
-              int metersHigh = gps.altitude.meters();
-              Serial.print(dataPressTemp);
-              displayGPS();
-              logToSD(dataPressTemp,metersHigh,SDcardWorking);
-              Serial.println("$");
+              String dataPressTemp = getDataPressTemp();// get the data as a string to write it to the SD card and print it on the serial monitor
+              float tempOLED = tempForOLED();// get the temp from the sensors to print it in the OLED display
+              float pressOLED = pressForOLED();//get the pressure from the sensors to print it in the OLED display
+              int metersHigh = gps.altitude.meters();// get the altitude from the GPS to print in the OLED display      
+              Serial.print(dataPressTemp);// send the information via radio
+              displayGPS();// send the GPS information via radio (*SHOULD CHANGE THE NAME OF THIS*)
+              Serial.println("$");//final character of the sequence of information via radio
+                
+                
+              logToSD(dataPressTemp,metersHigh,SDcardWorking);// store in the SD card only the temp,press and altitude data.
+
         
-              
+              //display the data in the OLED display
               displayTemperatura(tempOLED);
               displayPressure(pressOLED);
               displayAltitude(metersHigh);
+              //
+                
               //delay(100);// we are using a "smart delay" with the ms thing instead of delay
-              ++packetsSend;
+              ++packetsSend;// we have send one packet of information, so we increment the number by 1, 
              
             } 
            
       }
-       myFile.close();
+       myFile.close();// everything is inside the setup because it is easier to write to the file when you only close it once. 
+      //that is why there is that shitty loop, REMEMBER TO CLOSE the file so it saves it to the SD
 }
 
 void loop() {

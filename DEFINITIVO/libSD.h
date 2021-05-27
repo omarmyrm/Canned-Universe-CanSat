@@ -22,23 +22,23 @@ bool initSD(){
     {
       return false;
     } 
-    }else
-    {
-       return false;
-    }
+   
 }
-void logToSD (String a, int x,bool f)
+ // changed from void to bool so we can exit the function
+bool logToSD (String a, int x,bool f) 
 {   
- 
- 
     String data1 = a;
     int data2 = x;
     bool b = f;
          if(!b)
          {
+          return false;
+          // if the SD card is not working, it wont try to write to it
+          // and exit the function          
          }else{ 
               myFile.print(data1);
               myFile.print(data2);
               myFile.println("$");      
+              return true;
          }
 }
